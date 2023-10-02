@@ -2,12 +2,8 @@
 # Bash script to zip the whole project in order to make it deriverable
 # please make sure zip, pv and texlive are installed
 
-OUTFILE=../outfile.zip
+OUTFILE=../GRUPO81.02.Practica1.zip
 
-# make sure git is up to date
-echo "Making sure git is up to date..."
-git pull
-git checkout main
 
 # compile the report (and save it to root folder)
 echo "Compiling the report..."
@@ -24,9 +20,11 @@ cd src
 
 cd ..
 
+# TODO: Compile war
+
 # zip it (excluding useless stuff)
 echo "Zipping..."
-zip -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* README.md
+zip -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* README.md src/\* src/\*
 
 # cleanup
 echo "Cleaning up..."
