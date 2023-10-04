@@ -22,9 +22,9 @@ cd ..
 
 # TODO: Compile war
 
-# zip it (excluding useless stuff)
+# zip it
 echo "Zipping..."
-zip -r $OUTFILE . -x zip.sh report/\* \*.git\* img/\* README.md src/\* src/\*
+zip -r $OUTFILE *.war report.pdf
 
 # cleanup
 echo "Cleaning up..."
