@@ -7,5 +7,9 @@
 <title>ERROR PAGE</title>
 </head>
 <body>
+
+
+<h1> <%= exception.getMessage() %></h1>
+<p> <%= exception.toString() %>
 </body>
 </html>

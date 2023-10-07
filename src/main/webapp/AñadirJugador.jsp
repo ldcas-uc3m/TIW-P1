@@ -36,65 +36,66 @@
   <body>
     <div>
 
-      <div class="add-event-page-container">
-        <div class="add-event-page-body">
-          <div class="add-event-page-container01">
-            <div class="add-event-page-title">
-              <h1 class="add-event-page-heading">Añadir nuevo jugador:</h1>
+      <div class="añadir-jugador-container00">
+        <div class="añadir-jugador-body">
+          <div class="añadir-jugador-container01">
+            <div class="añadir-jugador-title">
+              <h1 class="añadir-jugador-heading">Añadir nuevo jugador:</h1>
             </div>
-            <div class="add-event-page-formulario">
-              <form action="StoreEvents" method="post" class="add-event-page-form">
-                <div class="add-event-page-campo1">
-                  <div class="add-event-page-container02">
-                    <label class="add-event-page-text">Nombre:</label>
+            <div class="añadir-jugador-formulario">
+              <form action="StoreEvents" method="post" class="añadir-jugador-form">
+                <div class="añadir-jugador-campo1">
+                  <div class="añadir-jugador-container02">
+                    <label class="añadir-jugador-text0">Nombre:</label>
                   </div>
-                  <div class="add-event-page-container03">
-                    <input type="text" class="add-event-page-textinput input" name="nombre"/>
+                  <div class="añadir-jugadorcontainer03">
+                    <input type="text" class="añadir-jugador-textinput input" name="nombre"/>
                   </div>
                 </div>
-                <div class="add-event-page-campo2">
-                  <div class="add-event-page-container04">
-                    <label class="add-event-page-text1">Apellidos:</label>
+                <div class="añadir-jugador-campo2">
+                  <div class="añadir-jugador-container04">
+                    <label class="añadir-jugador-text1">Apellidos:</label>
                   </div>
-                  <div class="add-event-page-container05">
+                  <div class="añadir-jugador-container05">
                     <input type="text" class="input" name="apellidos"/>
                   </div>
                 </div>
-                <div class="add-event-page-campo3">
-                  <div class="add-event-page-container06">
-                    <label class="add-event-page-text2">DNI:</label>
+                <div class="añadir-jugador-campo3">
+                  <div class="añadir-jugador-container06">
+                    <label class="añadir-jugador-text2">DNI:</label>
                   </div>
-                  <div class="add-event-page-container07">
-                    <input type="date" class="input" name="DNI"/>
+                  <div class="añadir-jugador-container07">
+                    <input type="text" class="input" name="DNI"/>
                   </div>
                 </div>
-                <div class="add-event-page-campo4">
-                  <div class="add-event-page-container08">
-                    <label class="add-event-page-text3">Alias:</label>
+                <div class="añadir-jugador-campo4">
+                  <div class="añadir-jugador-container08">
+                    <label class="añadir-jugador-text3">Alias:</label>
                   </div>
-                  <div class="add-event-page-container09">
+                  <div class="añadir-jugador-container09">
                     <input type="text" class="input" name="alias"/>
                   </div>
                 </div>
-                <div class="add-event-page-campo5">
-                  <div class="add-event-page-container10">
-                    <label class="add-event-page-text4">Posición:</label>
+                <div class="añadir-jugador-campo5">
+                  <div class="añadir-jugador-container10">
+                    <label class="añadir-jugador-text4">Posición:</label>
                   </div>
-                  <div class="add-event-page-container11">
+                  <div class="añadir-jugador-container11">
                     <input type="text" class="input" name="posicion"/>
                   </div>
                 </div>
 
-            <div class="add-event-page-button">
+            <div class="añadir-jugador-button">
               <div class="solid-button-container">
                 <button type="submit" class="solid-button-button button">
                   <span>Añadir</span>
                 </button>
               </div>
-              <div class="add-event-page-container14">
+              <div class="añadir-jugador-container14">
                 <div class="solid-button-container">
                   <button class="solid-button-button button">
-                    <span><a href="EditarJugadores.jsp">Cancelar</a></span>
+                  <!-- Aquí entiendo que hay que unirlo con el apartado de editar y borrar pero no sé todavía como hacerlo -->
+                      <span><a href="EditarJugadores.jsp">Cancelar</a></span>
                   </button>
                           </div>
                         </div>
