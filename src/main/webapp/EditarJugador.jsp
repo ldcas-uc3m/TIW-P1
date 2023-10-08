@@ -40,7 +40,7 @@
         <div class="añadir-jugador-body">
           <div class="añadir-jugador-container01">
             <div class="añadir-jugador-title">
-              <h1 class="añadir-jugador-heading">Añadir nuevo jugador:</h1>
+              <h1 class="añadir-jugador-heading">Editar jugador:</h1>
             </div>
             <div class="añadir-jugador-formulario">
               <form action="AñadirJugadorServlet" method="post" class="añadir-jugador-form">
