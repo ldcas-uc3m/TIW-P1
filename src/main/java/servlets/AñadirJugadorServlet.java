@@ -28,35 +28,45 @@ public class AñadirJugadorServlet extends HttpServlet {
         super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// obtenemos la lista de jugadores y posiciones
-		ArrayList<Jugador> plantilla = (ArrayList<Jugador>) getServletContext().getAttribute("plantilla");
-		Posiciones posiciones = (Posiciones) getServletContext().getAttribute("posiciones");
+		/**
+		 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+		 */
+    	
+		/**
+		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+		 */
+    	
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			// obtenemos la lista de jugadores y posiciones
+			ArrayList<Jugador> plantilla = (ArrayList<Jugador>) getServletContext().getAttribute("plantilla");
+			Posiciones posiciones = (Posiciones) getServletContext().getAttribute("posiciones");
 		
-		// añadir jugador
-		Jugador nuevoJugador = new Jugador(
-			(String) request.getParameter("nombre"),
-			(String) request.getParameter("apellidos"),
-			(String) request.getParameter("DNI"),
-			(String) request.getParameter("alias"),
-			(String) request.getParameter("posicion")
-		);
+			// añadir jugador
+			Jugador nuevoJugador = new Jugador(
+					(String) request.getParameter("nombre"),
+					(String) request.getParameter("apellidos"),
+					(String) request.getParameter("DNI"),
+					(String) request.getParameter("alias"),
+					(String) request.getParameter("posicion")
+					);
 
-		// actualizar número de posiciones
-		posiciones.añadirPosicion(nuevoJugador.getPosicion());
+			// actualizar número de posiciones
+			posiciones.añadirPosicion(nuevoJugador.getPosicion());
 	
-		plantilla.add(nuevoJugador);
+			plantilla.add(nuevoJugador);
 
-		// guardarlo en el ServletContext
-		getServletContext().setAttribute("plantilla", plantilla);
+			// guardarlo en el ServletContext
+			getServletContext().setAttribute("plantilla", plantilla);
+			
+		
+			String nuevaURL = "index.jsp"; // Reedirección al index
 
-	}
+			// Realizar la redirección
+			response.sendRedirect(nuevaURL);
+			}
 
 }
+
+
+
+
