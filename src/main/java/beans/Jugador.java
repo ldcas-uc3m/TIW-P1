@@ -37,6 +37,10 @@ public class Jugador implements java.io.Serializable {
     }
     
     public void setNombre(String nombre) {
+    	if (nombre.length() == 0) {
+    		throw new IllegalArgumentException("Campo 'Nombre' vacío");
+    	}
+   
     	this.nombre = nombre;
     }
     
@@ -45,6 +49,10 @@ public class Jugador implements java.io.Serializable {
     }
     
     public void setApellidos(String apellidos) {
+    	if (apellidos.length() == 0) {
+    		throw new IllegalArgumentException("Campo 'Apellidos' vacío");
+    	}
+    	
     	this.apellidos = apellidos;
     }
     
@@ -66,6 +74,10 @@ public class Jugador implements java.io.Serializable {
     }
     
     public void setAlias(String alias) {
+    	if (alias.length() == 0) {
+    		throw new IllegalArgumentException("Campo 'Alias' vacío");
+    	}
+ 
     	this.alias = alias;
     }
     
