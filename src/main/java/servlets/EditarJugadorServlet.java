@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -24,9 +25,18 @@ public class EditarJugadorServlet extends HttpServlet {
      */
     public EditarJugadorServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
+    
+    /**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
 
+		out.println((String) getServletContext().getAttribute("error"));
+		out.println("</br><a href=AñadirJugador.jsp>Back</a>");
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -38,25 +48,32 @@ public class EditarJugadorServlet extends HttpServlet {
 		
 		int index = Integer.parseInt(request.getParameter("index"));
 		
-		// añadir jugador
-		Jugador nuevoJugador = new Jugador(
-			(String) request.getParameter("nombre"),
-			(String) request.getParameter("apellidos"),
-			(String) request.getParameter("DNI"),
-			(String) request.getParameter("alias"),
-			(String) request.getParameter("posicion")
-		);
-
-		// actualizar número de posiciones
-		posiciones.añadirPosicion(nuevoJugador.getPosicion());
+		try {
+			// añadir jugador
+			Jugador nuevoJugador = new Jugador(
+				(String) request.getParameter("nombre"),
+				(String) request.getParameter("apellidos"),
+				(String) request.getParameter("DNI"),
+				(String) request.getParameter("alias"),
+				(String) request.getParameter("posicion")
+			);
 	
-		plantilla.set(index, nuevoJugador);
-
-		// guardarlo en el ServletContext
-		getServletContext().setAttribute("plantilla", plantilla);
-		getServletContext().setAttribute("posiciones", posiciones);
-		
-		response.sendRedirect("index.jsp");
+			// actualizar número de posiciones
+			posiciones.añadirPosicion(nuevoJugador.getPosicion());
+			
+			// actualizar info
+			plantilla.set(index, nuevoJugador);
+	
+			// guardarlo en el ServletContext
+			getServletContext().setAttribute("plantilla", plantilla);
+			getServletContext().setAttribute("posiciones", posiciones);
+			
+			response.sendRedirect("index.jsp");
+		}
+		catch (IllegalArgumentException e) {
+			getServletContext().setAttribute("error", e.getMessage());
+			doGet(request, response);
+		}
 	}
 
 }

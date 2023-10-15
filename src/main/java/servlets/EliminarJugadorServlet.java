@@ -24,7 +24,6 @@ public class EliminarJugadorServlet extends HttpServlet {
      */
     public EliminarJugadorServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**

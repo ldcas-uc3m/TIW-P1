@@ -19,10 +19,10 @@ public class Posiciones implements java.io.Serializable {
     public int numMedios = 0;
     public int numPorteros = 0;
     
-    private int maxDelanteros = 6;
-    private int maxDefensas = 8;
-    private int maxMedios = 8;
-    private int maxPorteros = 3;
+    public int maxDelanteros = 6;
+    public int maxDefensas = 8;
+    public int maxMedios = 8;
+    public int maxPorteros = 3;
     
     public void añadirPosicion(String posicion) throws IllegalArgumentException{
     	

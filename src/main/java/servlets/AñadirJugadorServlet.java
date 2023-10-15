@@ -69,7 +69,7 @@ public class AñadirJugadorServlet extends HttpServlet {
 			
 			// guardarlo en el ServletContext
 			getServletContext().setAttribute("plantilla", plantilla);
-      getServletContext().setAttribute("posiciones", posiciones);
+			getServletContext().setAttribute("posiciones", posiciones);
 
 			// pa' casa
 			response.sendRedirect("");

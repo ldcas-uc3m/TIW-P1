@@ -20,7 +20,7 @@ public class Jugador implements java.io.Serializable {
         }
         
         this.nombre = nombre;
-        this.apellidos = apellidos;        
+        this.apellidos = apellidos;
         this.DNI = DNI;
         this.alias = alias;
         this.posicion = posicion;
