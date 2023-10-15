@@ -103,7 +103,6 @@
               <div class="añadir-jugador-container14">
                 <div class="solid-button-container">
                   <button class="solid-button-button button">
-                  <!-- Aquí entiendo que hay que unirlo con el apartado de editar y borrar pero no sé todavía como hacerlo -->
                       <span><a href="index.jsp">Cancelar</a></span>
                   </button>
                   </div>

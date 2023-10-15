@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import = "javax.servlet.http.HttpSession, utils.CreateDBServlet, java.util.List" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,9 +80,12 @@
                 <div class="añadir-jugador-campo5">
                   <div class="añadir-jugador-container10">
                     <label class="añadir-jugador-text4">Posición:</label>
-                  </div>
-                  <div class="añadir-jugador-container11">
-                    <input type="text" class="input" name="posicion"/>
+                    <select name="posicion">
+					    <option value="Portero">Portero</option>
+					    <option value="Defensa">Defensa</option>
+					    <option value="Medio">Medio</option>
+					    <option value="Delantero">Delantero</option>
+					  </select>
                   </div>
                 </div>
 
@@ -94,7 +98,6 @@
               <div class="añadir-jugador-container14">
                 <div class="solid-button-container">
                   <button class="solid-button-button button">
-                  <!-- Aquí entiendo que hay que unirlo con el apartado de editar y borrar pero no sé todavía como hacerlo -->
                       <span><a href="index.jsp">Cancelar</a></span>
                   </button>
                           </div>
