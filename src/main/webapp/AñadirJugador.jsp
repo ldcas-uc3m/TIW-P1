@@ -80,9 +80,12 @@
                 <div class="añadir-jugador-campo5">
                   <div class="añadir-jugador-container10">
                     <label class="añadir-jugador-text4">Posición:</label>
-                  </div>
-                  <div class="añadir-jugador-container11">
-                    <input type="text" class="input" name="posicion"/>
+                    <select name="posicion">
+					    <option value="Portero">Portero</option>
+					    <option value="Defensa">Defensa</option>
+					    <option value="Medio">Medio</option>
+					    <option value="Delantero">Delantero</option>
+					  </select>
                   </div>
                 </div>
 

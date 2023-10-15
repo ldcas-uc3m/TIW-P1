@@ -1,12 +1,26 @@
 package beans;
 
+
+import utils.ValidadorDNI;
+
 public class Jugador implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-
-    public Jugador(String nombre, String apellidos, String DNI, String alias, String posicion) {
-        super();
+	
+	// constructor
+    public Jugador(String nombre, String apellidos, String DNI, String alias, String posicion) throws IllegalArgumentException {
+        
+    	// comprobar si los campos son vacíos
+    	if ((nombre.length() == 0) || (apellidos.length() == 0) || (DNI.length() == 0) || (alias.length() == 0) || (posicion.length() == 0)) {  // no, no hay otra forma de hacerlo
+        	throw new IllegalArgumentException("Faltan datos");
+        }
+        
+    	// validar DNI
+        if (!ValidadorDNI.validarDNI(DNI)) {
+        	throw new IllegalArgumentException("DNI no válido");
+        }
+        
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellidos = apellidos;        
         this.DNI = DNI;
         this.alias = alias;
         this.posicion = posicion;
@@ -23,6 +37,10 @@ public class Jugador implements java.io.Serializable {
     }
     
     public void setNombre(String nombre) {
+    	if (nombre.length() == 0) {
+    		throw new IllegalArgumentException("Campo 'Nombre' vacío");
+    	}
+   
     	this.nombre = nombre;
     }
     
@@ -31,6 +49,10 @@ public class Jugador implements java.io.Serializable {
     }
     
     public void setApellidos(String apellidos) {
+    	if (apellidos.length() == 0) {
+    		throw new IllegalArgumentException("Campo 'Apellidos' vacío");
+    	}
+    	
     	this.apellidos = apellidos;
     }
     
@@ -39,6 +61,11 @@ public class Jugador implements java.io.Serializable {
     }
     
     public void setDNI(String DNI) {
+    	// validar DNI
+        if (!ValidadorDNI.validarDNI(DNI)) {
+        	throw new IllegalArgumentException("DNI no válido");
+        }
+ 
     	this.DNI = DNI;
     }
     
@@ -47,6 +74,10 @@ public class Jugador implements java.io.Serializable {
     }
     
     public void setAlias(String alias) {
+    	if (alias.length() == 0) {
+    		throw new IllegalArgumentException("Campo 'Alias' vacío");
+    	}
+ 
     	this.alias = alias;
     }
     

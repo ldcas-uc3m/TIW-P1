@@ -34,6 +34,7 @@
   font-weight: 600;
   text-transform: none;
   text-decoration: none;
+  cursor: pointer;
 }
 .list-item {
   display: list-item;
