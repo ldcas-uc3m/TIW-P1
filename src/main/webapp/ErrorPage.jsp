@@ -19,5 +19,11 @@
 <h1> <%= exception.getMessage() %></h1>
 <%-- <p> <%= exception.toString() %> --%>
 
+
+<div class="solid-button-container">
+                	<button type="submit" class="solid-button-button button">
+                  		<span><a href="index.jsp">Volver al inicio</span>
+                	</button>
+                </div>
 </body>
 </html>

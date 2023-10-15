@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Plantilla del Atleti</title>
+		<h1>Plantilla del Atleti</h1>
 	</head>
 	<body>
 	
@@ -22,13 +22,17 @@
 	<ul>
 	
 	<%
+	int i = 0;
 	for (Jugador jugador : plantilla) {
 	%>
 		<li>
 		<%= jugador.getNombre() %> <%= jugador.getApellidos() %> - <%= jugador.getDNI() %> - <%= jugador.getAlias() %> - <%= jugador.getPosicion() %>
-		 <a href="EditarJugador.jsp">Editar</a>
+		 <a href="EditarJugador.jsp?index=<%=i%> ">Editar</a>
+		 <a href="EliminarJugadorServlet?index=<%=i%> ">Eliminar</a>
 		</li>
+		
 	<%
+		i++;
 	}
 	%>
 	</ul>

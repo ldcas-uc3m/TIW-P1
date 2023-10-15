@@ -13,50 +13,45 @@ import beans.Jugador;
 import beans.Posiciones;
 
 /**
- * Servlet implementation class EditarJugadorServlet
+ * Servlet implementation class EliminarJugadorServlet
  */
-@WebServlet("/EditarJugadorServlet")
-public class EditarJugadorServlet extends HttpServlet {
+@WebServlet("/EliminarJugadorServlet")
+public class EliminarJugadorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EditarJugadorServlet() {
+    public EliminarJugadorServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// obtenemos la lista de jugadores y posiciones
 		ArrayList<Jugador> plantilla = (ArrayList<Jugador>) getServletContext().getAttribute("plantilla");
 		Posiciones posiciones = (Posiciones) getServletContext().getAttribute("posiciones");
 		
-		int index = Integer.parseInt(request.getParameter("index"));
 		
-		// añadir jugador
-		Jugador nuevoJugador = new Jugador(
-			(String) request.getParameter("nombre"),
-			(String) request.getParameter("apellidos"),
-			(String) request.getParameter("DNI"),
-			(String) request.getParameter("alias"),
-			(String) request.getParameter("posicion")
-		);
-
+		int index = Integer.parseInt(request.getParameter("index")); 
+			
+		String posicion = plantilla.get(index).getPosicion();
+				
 		// actualizar número de posiciones
-		posiciones.añadirPosicion(nuevoJugador.getPosicion());
-	
-		plantilla.set(index, nuevoJugador);
-
+		posiciones.eliminarPosicion(posicion);
+		
+		plantilla.remove(index);
+		
 		// guardarlo en el ServletContext
 		getServletContext().setAttribute("plantilla", plantilla);
 		getServletContext().setAttribute("posiciones", posiciones);
 		
 		response.sendRedirect("index.jsp");
 	}
+
 
 }

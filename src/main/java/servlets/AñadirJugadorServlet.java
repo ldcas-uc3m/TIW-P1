@@ -53,7 +53,6 @@ public class AñadirJugadorServlet extends HttpServlet {
 		}
 		
 		try {
-
 			Jugador nuevoJugador = new Jugador(
 				(String) request.getParameter("nombre"),
 				(String) request.getParameter("apellidos"),
@@ -70,6 +69,7 @@ public class AñadirJugadorServlet extends HttpServlet {
 			
 			// guardarlo en el ServletContext
 			getServletContext().setAttribute("plantilla", plantilla);
+      getServletContext().setAttribute("posiciones", posiciones);
 
 			// pa' casa
 			response.sendRedirect("");
