@@ -34,6 +34,11 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+  
+  <% String index = request.getParameter("index"); %>
+  
+  <h2>El indice del jugador es: <%= index %></h2>
+  
     <div>
 
       <div class="añadir-jugador-container00">
@@ -42,8 +47,11 @@
             <div class="añadir-jugador-title">
               <h1 class="añadir-jugador-heading">Editar jugador:</h1>
             </div>
+            
+           
+            
             <div class="añadir-jugador-formulario">
-              <form action="AñadirJugadorServlet" method="post" class="añadir-jugador-form">
+              <form action="EditarJugadorServlet?index=<%=index%>" method="post" class="añadir-jugador-form">
                 <div class="añadir-jugador-campo1">
                   <div class="añadir-jugador-container02">
                     <label class="añadir-jugador-text0">Nombre:</label>
@@ -88,17 +96,20 @@
             <div class="añadir-jugador-button">
               <div class="solid-button-container">
                 <button type="submit" class="solid-button-button button">
-                  <span>Añadir</span>
+                  <span>Guardar Cambios</span>
                 </button>
               </div>
+              
               <div class="añadir-jugador-container14">
                 <div class="solid-button-container">
                   <button class="solid-button-button button">
                   <!-- Aquí entiendo que hay que unirlo con el apartado de editar y borrar pero no sé todavía como hacerlo -->
-                      <span><a href="EditarJugadores.jsp">Cancelar</a></span>
+                      <span><a href="index.jsp">Cancelar</a></span>
                   </button>
-                          </div>
-                        </div>
+                  </div>
+              </div>
+                     
+              
                       </div>
 				</form>     
 			     </div> 
@@ -106,6 +117,9 @@
             </div>
           </div>
 		</div>
+		
+		
+		
     <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
   </body>
 </html>

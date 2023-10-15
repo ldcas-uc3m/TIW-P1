@@ -66,5 +66,36 @@ public class Posiciones implements java.io.Serializable {
 	    		break;
 	    }
     }
+    
+	public void eliminarPosicion(String posicion) throws IllegalArgumentException{
+	    	    	
+	    	try {
+	    		Posicion pos = Posicion.valueOf(posicion);
+	    		
+	    		switch(pos) {
+		    		case Delantero:
+		    			this.numDelanteros -= 1;		    		
+		    			break;
+		    		
+			    	case Defensa:
+		    			this.numDefensas -= 1;
+			    		break;
+			    		
+			    	case Medio:
+		    			this.numMedios -= 1;	
+			    		break;
+			    		
+			    	case Portero:
+		    			this.numPorteros -= 1;	
+		    			break;
+	    		}
+	    		
+	    	}
+	    	catch (IllegalArgumentException e){
+	    		throw new IllegalArgumentException("Posición no reconocida");
+	    	}
+	   
+	    	
+	    }
 
 }
