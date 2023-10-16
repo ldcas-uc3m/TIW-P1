@@ -22,6 +22,9 @@
 	Posiciones posiciones = (Posiciones) getServletContext().getAttribute("posiciones");
 	%>
 	
+	<h2>El mejor equipo</h2>
+    <img src="images/escudo.jpg" alt="Escudo" width="350" height="200">
+	
 	<h4>
 		Porteros: <%= posiciones.numPorteros %>/<%= posiciones.maxPorteros %> |
 		Defensas: <%= posiciones.numDefensas %>/<%= posiciones.maxDefensas %> |
