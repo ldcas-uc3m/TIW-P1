@@ -12,15 +12,6 @@ latexmk -cd -shell-escape -pdf report/report.tex
 
 cp report/report.pdf .
 
-cd ..
-
-cd src
-
-# <clean stuff up>
-
-cd ..
-
-# TODO: Compile war
 
 # zip it
 echo "Zipping..."
