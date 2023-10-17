@@ -10,6 +10,7 @@
 *.blg
 *.out
 *.markdown.lua
+*.toc
 
 svg-inkscape/
 _markdown_report

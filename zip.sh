@@ -7,10 +7,10 @@ OUTFILE=../GRUPO81.02.Practica1.zip
 
 # compile the report (and save it to root folder)
 echo "Compiling the report..."
-cd report
 
-pdflatex report.tex -halt-on-error > /dev/null
-cp report.pdf ..
+latexmk -cd -shell-escape -pdf report/report.tex 
+
+cp report/report.pdf .
 
 cd ..
 

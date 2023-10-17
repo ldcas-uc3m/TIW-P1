@@ -26,7 +26,11 @@
 \begin{document}
 
 \input{parts/0-cover.tex}
-% \tableofcontents
+
+% Table of contents
+\renewcommand{\contentsname}{Tabla de contenidos}
+\tableofcontents{}
+\newpage
 
 % Put here all the parts to include (in order)
 \markdownInput{parts/main.md}
