@@ -37,13 +37,12 @@ https://nexus.payara.fish/#browse/browse:payara-community:fish%2Fpayara%2Fdistri
 ## Ejecución
 
 - **Con Eclipse EE:** Si has seguido los pasos de la [Instalación](#instalación), asegúrate de tener seleccionado el proyecto y haz clic en `Run` → `Run As` → `Run on Server` y selecciona tu servidor de Payara.
-- **A través de la línea de comandos:** Una vez exportado el archivo WAR:
+- **A través de la línea de comandos:** Una vez exportado el archivo WAR (e instalado Java y Payara):
     ```bash
     JAVA_HOME=<path-to-java>
     PAYARA_PATH=<path-to-payara>
 
     sudo $PAYARA_PATH/bin/asadmin start-domain -d
-
     sudo $PAYARA_PATH/bin/asadmin deploy TIW-P1.war
     ```
 

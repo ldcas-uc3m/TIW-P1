@@ -2,7 +2,7 @@
 # Bash script to zip the whole project in order to make it deriverable
 # please make sure zip, pv and texlive are installed
 
-OUTFILE=../GRUPO81.02.Practica1.zip
+OUTFILE=GRUPO81.02.Practica1.zip
 
 
 # compile the report (and save it to root folder)
