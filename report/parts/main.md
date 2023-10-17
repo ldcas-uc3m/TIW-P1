@@ -1,25 +1,40 @@
+User
 # Introducción
 
-La aplicación web realizada está basada en la posibilidad de agregar, editar y eliminar jugadores que podrían formar parte de la plantilla del club más prestigioso de España, el Atlético de Madrid. La estructura principal que sigue se divide en dos, siendo estas la parte de **Java** donde se incluyen los servlets, beans y utils y la parte de **WebApp** donde aparecen los archivos JavaServer Pages (los que permiten dar el formato 'html' a nuestra web) junto a una hoja de estilos para poder editar fuentes y todo lo relacionado con la apariencia de la aplicación web en posibles actualizaciones.  
+La aplicación web realizada está basada en la posibilidad de agregar, editar y eliminar jugadores que podrían formar parte de la plantillas de los clubes más prestigiosos de España (eg: Atlético de Madrid, Real Madrid, FC Barcelona... etc). La estructura principal que sigue el proyecto (carpeta src/main/ ) se divide en dos, una sección relacionada a la programación en **Java** y otra a cargo de la **WebApp**. Respecto a la parte de **Java** es principalmente donde se incluyen los servlets, beans y utils. Por otro lado el **WebApp** es donde aparecen los archivos JavaServer Pages (los que permiten dar el formato 'html' a nuestra web) junto a una hoja de estilos para poder editar fuentes y todo lo relacionado con la apariencia de la aplicación web en posibles actualizaciones.  
 
 # Java 
-Dividido en tres carpetas principales (Beans, Servlets y Utils) con sus respectivos archivos y divisiones.
+Dividido en tres carpetas principales (Beans, Servlets y Utils) con sus respectivos archivos y divisiones. Es la carpeta madre de todos los archivos Java del proyecto.
 
 ## Beans
+Se trata del construtor de objetos que poseen los archivos que contiene la carpeta,que son basicamente jugador y posiciones.
 
 ### Jugador.java
+Se trata del archivo donde se define el objeto "Jugador" y se comprueba si el valor intruducido es correcto (no hay campos vacíos) y se llama al validador del DNI para comprobar si este es correcto.
+
 ### Posiciones.java
+Se trata del archivo donde se define el objeto "Posiciones" y se definen estas mismas. El archivo comienza definiendo el numero inicial en cada posición que obviamente es 0 ya que la base de datos está vacia, y el número máximo de jugadores por posición. Se definen los métodos que añaden y borran jugadores con sus correspondiente gestión de errores (más judadores de la cuenta, posiciones no reconocidas o número de errores negativo).
 
 ## Servlets
+Carpeta conteniente de todos los archivos java en realcion a los servlets que nuestra aplicación utiliza.
 
 ### AñadirJugadorServlet.java
+Archivo en el que se define el servet encargado de añadir un jugador a la base de datos. Este servlet actualiza los valores de las posiciones y introduce a la base de datos la información introducida por el usuario.
+
 ### EditarJugadorServlet.java
+Archivo en el que se define el servet encargado de modificar la información de un jugador a la base de datos. Este servlet modifica en la base de datos la información introducida por el usuario.
+
 ### EliminarJugadorServlet.java
+Archivo en el que se define el servet encargado de borrar un jugador de la base de datos. Este servlet actualiza los valores de las posiciones y elimina de la base de datos la información introducida por el usuario.
 
 ## Utils
+Contien funcionalidades genéricas que pueden ser utilizadas una o varias veces en un proyecto y que es mejor encapsular para la simplicidad y escalado del proyecto
 
 ### CreateDBServlet.java
+Archivo encargado de la gestión que implica crear la base de datos de 0. Importa numerosas funcionalidades de javax.servlet ya que muchas de las funciones de estos están estrechamente relacionadas a la base de datos
+
 ### ValidadorDNI.java
+Archivo encargado de validar un valor que se introduce como DNI comprobando que la letra es correcta y coincide con el número correspondiente o sea un dni que no exista. Para esta funcionalidad se utiliza una expresion regular (regex)
 
 # WebApp
 Dividido en los diferentes **JavaServer Pages** y la carpeta de hojas de estilo posible.
@@ -42,7 +57,9 @@ Además, existe la opción de cancelar la operación y así volver a la página 
 Esta página, como su propio nombre indica, es la destinada a mostrar errores y permitir lanzar los **mensajes de error** y **excepciones pertinentes**. Además, se incluye un botón que permite volver a la página principal para poder seguir navegando si es que ya estabas dentro de la propia aplicación cuando el error dió lugar.
 
 # Conclusiones
-La realización de esta práctica a pesar de no suponer una gran dificultad en primera instancia es muy gratificante, ya que es el primer contacto directo en un proyecto de este tipo y del cual se aprenden muchas cosas nuevas (especialmente en la conexión a servidores como de java) al igual que se repasan otras tantas como el trabajo con html y las hojas de estilos, algo muy importante al ser la cara del producto y de la aplicación web que se quiere dar a conocer.
+La realización de esta práctica a pesar de no suponer una gran dificultad en primera instancia ha sido muy constructiva, ya que es el primer contacto directo con un proyecto de este tipo y en el cual se tratan muchas cosas nuevas (especialmente en la conexión a servidores como de java) al igual que se repasan otras tantas como el trabajo con html y las hojas de estilos. Siendo estas ultimas algo fundamental ya que se trata de la cara del producto la cara del producto y la aplicación web que se quiere dar a conocer.
 
-Como conclusiones finales, cabe resaltar las ganas de saber como poder juntar todo este tipo de recursos y herramientas con el resto que se han comentado en las clases para, de esta manera, acabar con un trabajo de mucha mayor escala además de útil para el futuro a través de la mezcla de tantos medios. 
+Ha sido cuanto menos interesante la utilización primeriza de Eclipse y Payara para establecer las bases en las que el proyecto se desarrolla (servidores, HTML, CSS ...) ya que nos da un enfoque más profesional de la forma de trabajar del mercado laboral. 
+
+Como conclusiones finales, cabe resaltar el interés que tenemos sobre como se pueden unir este tipo de recursos y herramientas con el resto que se han comentado en las clases para, de esta manera, acabar con un trabajo de mucha mayor escala y aplicable a problemas reales.
 
