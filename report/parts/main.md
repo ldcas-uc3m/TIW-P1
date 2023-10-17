@@ -16,22 +16,27 @@ Se trata del archivo donde se define el objeto "Jugador" y se comprueba si el va
 Se trata del archivo donde se define el objeto "Posiciones" y se definen estas mismas. El archivo comienza definiendo el numero inicial en cada posición que obviamente es 0 ya que la base de datos está vacia, y el número máximo de jugadores por posición. Se definen los métodos que añaden y borran jugadores con sus correspondiente gestión de errores (más judadores de la cuenta, posiciones no reconocidas o número de errores negativo).
 
 ## Servlets
-Carpeta conteniente de todos los archivos java en realcion a los servlets que nuestra aplicación utiliza.
+Carpeta conteniente de todos los archivos Java en relación a los servlets que nuestra aplicación utiliza. Destacar la importancia del ServletContext que el es encargado de mantener la consistencia entre todos los servlets y es el encargado de almacenar datos cuando por ejemplo un jugador se edita entre otras. Este servlet es la interfaz entre todos ellos y el que permite el correcto funcionamiento de los servicios que proveen.
 
 ### AñadirJugadorServlet.java
-Archivo en el que se define el servet encargado de añadir un jugador a la base de datos. Este servlet actualiza los valores de las posiciones y introduce a la base de datos la información introducida por el usuario.
+Archivo en el que se define el servet encargado de añadir un jugador a la base de datos. Este servlet actualiza los valores de las posiciones y introduce a la base de datos la información introducida por el usuario.Para realizar este cometido se añade a la base de datos utilizando el método append() (ya que es un str) ,se sobrescribe en el servletcontext con setAttribute(), por último redirigimos al usuario con la correspondiente gestión de errores.
+Tanto este como el formulario de editar jugador hacen uso de la request tipo POST.
 
 ### EditarJugadorServlet.java
-Archivo en el que se define el servet encargado de modificar la información de un jugador a la base de datos. Este servlet modifica en la base de datos la información introducida por el usuario.
+Archivo en el que se define el servet encargado de modificar la información de un jugador a la base de datos. Este servlet modifica en la base de datos la información introducida por el usuario.Con el índice del jugador (que es alfin y al cabo la forma de localizarlo) se actualiza en la base de datos utilizando el metodo set(),se sobrescribe en el servletcontext con setAttribute(), por último redirigimos al usuario a la pagina principal (index) con la correspondiente gestión de errores. 
+Tanto este como el formulario de añadir jugador hacen uso de la request tipo POST.
+
 
 ### EliminarJugadorServlet.java
 Archivo en el que se define el servet encargado de borrar un jugador de la base de datos. Este servlet actualiza los valores de las posiciones y elimina de la base de datos la información introducida por el usuario.
 
+Este formulario hace uso de la request tipo GET.
+
 ## Utils
-Contien funcionalidades genéricas que pueden ser utilizadas una o varias veces en un proyecto y que es mejor encapsular para la simplicidad y escalado del proyecto
+Contiene funcionalidades genéricas que pueden ser utilizadas una o varias veces en un proyecto y que es mejor encapsular para la simplicidad y escalado del proyecto
 
 ### CreateDBServlet.java
-Archivo encargado de la gestión que implica crear la base de datos de 0. Importa numerosas funcionalidades de javax.servlet ya que muchas de las funciones de estos están estrechamente relacionadas a la base de datos
+Archivo encargado de la gestión que implica crear la base de datos de 0. Importa numerosas funcionalidades de javax.servlet ya que muchas de las funciones de estos están estrechamente relacionadas a la base de datos. Es relevante destacar que en este caso la base de datos se trata simplemente de un string en el que almacenamos los datos y no una base de datos al uso por tanto siempre que se mencione la misma nos referiremos a esta forma de almacenamiento.
 
 ### ValidadorDNI.java
 Archivo encargado de validar un valor que se introduce como DNI comprobando que la letra es correcta y coincide con el número correspondiente o sea un dni que no exista. Para esta funcionalidad se utiliza una expresion regular (regex)
